@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tus Repositorios</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+
+    .repo {
+      margin-bottom: 10px;
+    }
+
+    .repo a {
+      color: #0366d6;
+      text-decoration: none;
+    }
+
+    .repo a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <h1>Tus Repositorios</h1>
+    <div id="repos"></div>
+  </div>
+
+  <script>
+    // Utiliza tu nombre de usuario de GitHub
+    const username = "Aleviz";
+
+    // URL para obtener la lista de repositorios
+    const url = `https://api.github.com/users/${username}/repos`;
+
+    // Obtener los repositorios utilizando Fetch API
+    fetch(url)
+      .then(response => response.json())
+      .then(data => {
+        const reposContainer = document.getElementById("repos");
+
+        // Crear un enlace para cada repositorio
+        data.forEach(repo => {
+          const repoElement = document.createElement("div");
+          repoElement.className = "repo";
+          const link = document.createElement("a");
+          link.href = repo.html_url;
+          link.textContent = repo.name;
+          repoElement.appendChild(link);
+          reposContainer.appendChild(repoElement);
+        });
+      })
+      .catch(error => {
+        console.log(error);
+      });
+  </script>
+</body>
+
+</html>

@@ -2,71 +2,205 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Tus Repositorios</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-    }
+  <title>CSS Website Layout</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    .container {
-      max-width: 800px;
-      margin: 0 auto;
-      padding: 20px;
-    }
+  <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="resources/style/style.css">
+ 
 
-    .repo {
-      margin-bottom: 10px;
-    }
-
-    .repo a {
-      color: #0366d6;
-      text-decoration: none;
-    }
-
-    .repo a:hover {
-      text-decoration: underline;
-    }
-  </style>
 </head>
 
 <body>
-  <div class="container">
-    <h1>Tus Repositorios</h1>
-    <div id="repos"></div>
+  <div class="topnav">
+    <h1 id="portfolio">Portfolio</h1>
+    <a href="#home">Inicio</a>
+    <a href="#skills">Habilidades</a>
+    <a href="#proyectos">Proyectos</a>
   </div>
 
-  <script>
-    // Utiliza tu nombre de usuario de GitHub
-    const username = "Aleviz";
+  <div id="home" class="container">
+    <div class="left-section">
+      <div class="container-left-section">
 
-    // URL para obtener la lista de repositorios
-    const url = `https://api.github.com/users/${username}/repos`;
+        <p>
+        <h1 style="margin-bottom: 0%;">Alejandro Rodriguez</h1>
+        Desarrollador Web || Estudiante de la Ingenieria De Sistemas Informaticos <br /> -El Salvador.</p>
+        <p id="descripcion">Un joven apasionado desarrollador web con sólidos conocimientos en Java y
+          el framework Spring. También poseo conocimientos en JavaScript y un nivel básico
+          en otros lenguajes de programación como Python, C++ y C#. Actualmente,
+          estoy estudiando Ingeniería en Sistemas Informaticos y mi objetivo es seguir
+          ampliando mis habilidades técnicas.
+          <br /><br />Durante mi trayectoria académica, he adquirido una sólida comprensión
+          de los principios fundamentales de la programación, lo cual me permite abordar
+          proyectos prácticos con confianza y eficiencia. Estoy emocionado por aplicar
+          mis conocimientos y habilidades en el desarrollo de soluciones web innovadoras.
+          Como desarrollador web, disfruto creando cada funcion, centrándome en
+          brindar una experiencia fluida y atractiva para los usuarios.
+          Mi pasión por la programación me impulsa a estar al tanto de las últimas
+          tendencias y tecnologías en el ámbito del desarrollo web, lo que me
+          permite adaptarme rápidamente a los cambios y mantenerme actualizado.
+        </p>
+      </div>
+      <div class="inf">
+      <a class="cvbutton" href="https://drive.google.com/file/d/10f1l64IHGhqOctnoLhnr1cXAC-P4c2po/view?usp=sharing" target="_blank" style="vertical-align:-webkit-baseline-middle"><span id="spancv">Check CV</span></a>
+      <div class="line-container">
+        <span id="c"></span>
+      </div>
+      <a class="inf-contact" style="margin-left: 2%; margin-right: -47%; margin-top: 1%;" href="https://github.com/Aleviz/" target="_blank"><img src="resources/img/github-white.png" width="32px"></a>
+      <a class="inf-contact" style="margin-left:49%; margin-top: 1.1%;" href="https://www.linkedin.com/in/alejandro-rodriguez-9b4121195/" target="_blank"><img src="resources/img/LinkedIn-logo.png" width="32px"></a>
+    </div>
+      <!-- Contenido de la sección izquierda -->
+    </div>
+    <div class="right-section">
+      <img src="resources/img/code-typing-animate.svg" width="500px">
 
-    // Obtener los repositorios utilizando Fetch API
-    fetch(url)
-      .then(response => response.json())
-      .then(data => {
-        const reposContainer = document.getElementById("repos");
+      <!-- Contenido de la sección derecha -->
+    </div>
+  </div>
+  <br />
+  <div id="skills">
+    <h1 style="color:aliceblue;padding-top:5%; padding-left:10%">Habilidades</h1>
+    <div class="skills-content-top">
 
-        // Crear un enlace para cada repositorio
-        data.forEach(repo => {
-          const repoElement = document.createElement("div");
-          repoElement.className = "repo";
-          const link = document.createElement("a");
-          link.href = repo.html_url;
-          link.textContent = repo.name;
-          repoElement.appendChild(link);
-          reposContainer.appendChild(repoElement);
-        });
-      })
-      .catch(error => {
-        console.log(error);
-      });
-  </script>
+      <div class="skills-element">
+        <img class="skills-img" src="resources/img/java.png" width="140px">
+        <p>JAVA</p>
+      </div>
+      <div class="skills-element">
+        <img class="skills-img" src="resources/img/spring.png" width="140px">
+        <p>SPRING</p>
+      </div>
+      <div class="skills-element">
+        <img class="skills-img" src="resources/img/js.png" width="140px">
+        <p>JAVASCRIPT</p>
+      </div>
+
+      <div class="skills-element">
+        <img class="skills-img" src="resources/img/MySQL.png" width="199px">
+        <p style="margin-top:9%">MySQL</p>
+      </div>
+    </div>
+    <div class="skills-content-bottom">
+      <div class="skills-element">
+        <img class="skills-img" src="resources/img/git.png" width="140px">
+        <p>GIT</p>
+      </div>
+      <div class="skills-element">
+        <img class="skills-img" src="resources/img/github-black.png" width="140px">
+        <p>GITHUB</p>
+      </div>
+      <div class="skills-element" style="margin-right: 19%;">
+        <img class="skills-img" src="resources/img/html-5.png" width="140px">
+        <p>HTML</p>
+      </div>
+      <div class="skills-element">
+        <img class="skills-img" src="resources/img/css-3.png" width="140px">
+        <p>CSS</p>
+      </div>
+    </div>
+  </div>
+
+  <div id="proyectos">
+    <h1 style="padding-top:5%;padding-left: 10%;">Proyectos </h1>
+    <div class="proyecto-content">
+      
+      <div class="proyecto-element">
+        <div>
+          <img src="resources/img/cargauniversitaria.png" width="140px">
+          <h2>CARGA ACADEMICA <a style="padding-left: 10%;" href="https://github.com/Aleviz/si_02" target="_blank"><img src="resources/img/github-black.png" alt="" width="10%"></a></h2>
+          <p>Carga academica es una aplicacion web donde se nos permite interactuar con el mapa del campus universitario
+            este tambien nos ayuda a ver que materias tiene nuestro pensum y los profesores ligados a este, a su vez, nos permite inscribir materias </p>
+          <br />
+          <div class="tec">
+          <p  style="color: whitesmoke">
+            Tecnologias:<br/>
+            <span style="color:red">#Java</span>&nbsp&nbsp
+            <span style="color:lightgreen">#Spring Boot</span>&nbsp&nbsp
+            <span style="color:yellow">#JavaScript</span>&nbsp&nbsp
+            <span style="color:rgb(16, 235, 64)">#Leaflet</span>&nbsp&nbsp
+            <span style="color:orange">#JQuery</span>&nbsp&nbsp
+            <span style="color:rgb(247, 247, 247)">#JSON</span>&nbsp&nbsp
+            <span style="color:orange">#Tomcat</span>&nbsp&nbsp
+            <span style="color:lightblue">#MySQL</span>&nbsp&nbsp
+            <span style="color:rgb(25, 185, 238)">#CSS</span>&nbsp&nbsp
+            <span style="color:rgb(169, 103, 255)">#Bootstrap</span>&nbsp&nbsp
+            <span style="color:rgb(255, 255, 255)">#HTML</span>&nbsp&nbsp
+          </p>
+        </div>
+        </div>
+      </div>
+      
+      <div class="proyecto-element">
+        <div>
+          <img src="resources/img/consultanota.png" width="140px">
+          <h2>CONSULTA DE NOTAS <a style="padding-left: 2%;" href="https://github.com/Aleviz/consultanotas" target="_blank"><img src="resources/img/github-black.png" alt="" width="10%"></a></h2>
+          <p>Consulta de Notas, es una aplicacion web desarrollada en JSF, como rol de alumno, nos permite poder observar las notas de cada materia junto con su promedio, como rol de profesor, nos permite registrar
+            la nota de cada alumno. </p>
+          <br />
+          <div class="tec">
+          <p  style="color: whitesmoke">
+            Tecnologias:<br/>
+            <span style="color:red">#Java</span>&nbsp&nbsp
+            <span style="color:lightgreen">#JavaServer Faces</span>&nbsp&nbsp
+            <span style="color:yellow">#PrimeFaces</span>&nbsp&nbsp
+            <span style="color:rgb(16, 235, 64)">#JasperReport</span>&nbsp&nbsp
+            <span style="color:lightblue">#MySQL</span>&nbsp&nbsp
+            <span style="color:rgb(25, 185, 238)">#CSS</span>&nbsp&nbsp
+            <span style="color:rgb(255, 255, 255)">#HTML</span>&nbsp&nbsp
+          </p>
+        </div>
+        </div>
+      </div>
+
+      <div class="proyecto-element">
+        <div>
+          <img src="resources/img/sistemaodontologico.png" width="140px" >
+          <h2>SISTEMA ODONTOLOGICO <a style="padding-left: 2%;" href="https://github.com/Aleviz/SistemaOdontologico" target="_blank"><img src="resources/img/github-private.png" width="10%" alt="privado" title="Proyecto Privado"></a></h2>
+          <p>Sistema Odontologico es una aplicacion web, desarrollado en Spring, este proyecto tiene diversas funcionalidades y esta pensado
+            para llevar un historial riguroso de cada paciente a su vez, este nos permite almacenar los recibos emitidos y trabajos pendiente de cada paciente.
+          Tambien la aplicacion nos permite registrar citas, modificarla, cancelarla. </p>
+          <br />
+          <div class="tec">
+            <p  style="color: whitesmoke">
+            Tecnologias:<br/>
+            <span style="color:red">#Java</span>&nbsp&nbsp
+            <span style="color:lightgreen">#Spring Boot</span>&nbsp&nbsp
+            <span style="color:yellow">#JavaScript</span>&nbsp&nbsp
+            <span style="color:orange">#JQuery</span>&nbsp&nbsp
+            <span style="color:rgb(247, 247, 247)">#JSON</span>&nbsp&nbsp
+            <span style="color:rgb(16, 235, 64)">#JasperReport</span>&nbsp&nbsp
+            <span style="color:orange">#Tomcat</span>&nbsp&nbsp
+            <span style="color:lightblue">#MySQL</span>&nbsp&nbsp
+            <span style="color:rgb(25, 185, 238)">#CSS</span>&nbsp&nbsp
+            <span style="color:rgb(169, 103, 255)">#Bootstrap</span>&nbsp&nbsp
+            <span style="color:rgb(255, 255, 255)">#HTML</span>&nbsp&nbsp
+
+          </p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <footer>
+    <div class="footer-element">
+      <h1 >Alejandro Rodriguez</h1>
+      <div class="line-footer" style="background-color: white;">
+        <span ></span>
+      </div>
+
+      <div class="footer-element-content">
+        <a href="https://github.com/Aleviz/" target="_blank"><img src="resources/img/github-black.png" width="32px"></a>
+        <a href="https://www.linkedin.com/in/alejandro-rodriguez-9b4121195/" target="_blank"><img src="resources/img/LinkedIn-logo.png" width="32px"></a>
+      </div>
+    </div>
+  </footer>
+
+
+
 </body>
 
 </html>
